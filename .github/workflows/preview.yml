@@ -1,0 +1,30 @@
+name: Deploy preview for pull requests
+
+permissions:
+    pull-requests: write
+
+on:
+    pull_request:
+        types: [opened, synchronize, reopened]
+        paths:
+            - "./index.html"
+            - "./css/**"
+            - "./js/**"
+
+concurrency: preview-${{ github.ref }}
+
+jobs:
+    deploy-preview:
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v4
+            - name: Deploy preview
+              uses: rossjrw/pr-preview-action@v1.4.7
+              with:
+                  source-dir: .
+                  preview-branch: main
+            - uses: rossjrw/pr-preview-action@v1
+              if: github.event.action == 'closed' && !github.event.pull_request.merged
+              with:
+                  source-dir: ./build/
+                  action: remove
