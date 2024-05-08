@@ -1,7 +1,7 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (Development version)
 on:
     push:
-        branches: [main]
+        branches: [beta]
 
 permissions:
     contents: write
@@ -16,6 +16,5 @@ jobs:
               uses: JamesIves/github-pages-deploy-action@v4
               with:
                   folder: .
-                  clean-exclude: |
-                      pr-preview/
-                      beta/
+                  clean-exclude: pr-preview/
+                  target-folder: beta/
