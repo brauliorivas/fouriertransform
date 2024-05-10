@@ -16,5 +16,7 @@ jobs:
               uses: JamesIves/github-pages-deploy-action@v4
               with:
                   folder: .
-                  clean-exclude: pr-preview/
-                  target-folder: beta/
+                  clean-exclude: |
+                      pr-preview/
+                      main/
+                  target-folder: release/
