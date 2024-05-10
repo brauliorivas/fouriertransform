@@ -1,7 +1,10 @@
 # fouriertransform
 
-## Production
+## Production (main branch)
 https://brauliorivas.github.io/fouriertransform/
 
-## Beta
-https://brauliorivas.github.io/fouriertransform/beta/
+## Release (release branch)
+https://brauliorivas.github.io/fouriertransform/release/
+
+## PR preview
+https://brauliorivas.github.io/fouriertransform/pr-preview/pr-11/
