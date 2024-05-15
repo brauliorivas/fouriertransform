@@ -18,4 +18,5 @@ jobs:
                   folder: .
                   clean-exclude: |
                       pr-preview/
-                      beta/
+                      release/
+                  target-folder: main/
